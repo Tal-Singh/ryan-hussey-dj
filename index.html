@@ -6,10 +6,6 @@
   <title>Ryan Hussey DJ Press Pack</title>
 
   <style>
-    :root {
-      color-scheme: dark;
-    }
-
     html, body {
       margin: 0;
       padding: 0;
@@ -22,43 +18,43 @@
     /* DESKTOP VIEW */
     .desktop-view {
       display: block;
-      height: 100%;
+      width: 100%;
+      height: 100vh;
     }
 
     iframe {
+      display: block;
+      border: 0;
       width: 100%;
-      height: 100vh;
-      border: none;
+      height: 100%;
     }
 
     /* MOBILE VIEW */
     .mobile-view {
       display: none;
       height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      box-sizing: border-box;
+      padding: 24px;
       text-align: center;
-      padding: 20px;
-    }
-
-    .mobile-content {
-      max-width: 400px;
+      align-content: center;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
     }
 
     h1 {
-      font-size: 26px;
-      margin-bottom: 10px;
+      font-size: 28px;
+      margin-bottom: 12px;
     }
 
     p {
-      color: #ccc;
       margin-bottom: 20px;
+      opacity: 0.8;
     }
 
-    .button {
+    .btn {
       display: inline-block;
-      padding: 14px 24px;
+      padding: 12px 20px;
       background: #fff;
       color: #000;
       text-decoration: none;
@@ -66,14 +62,14 @@
       font-weight: bold;
     }
 
-    /* SWITCH TO MOBILE */
+    /* MOBILE BREAKPOINT */
     @media (max-width: 768px) {
       .desktop-view {
-        display: none;
+        display: none !important;
       }
 
       .mobile-view {
-        display: flex;
+        display: flex !important;
       }
     }
   </style>
@@ -81,20 +77,16 @@
 
 <body>
 
-  <!-- DESKTOP -->
+  <!-- DESKTOP PDF VIEW -->
   <div class="desktop-view">
     <iframe src="press-pack.pdf"></iframe>
   </div>
 
-  <!-- MOBILE -->
+  <!-- MOBILE BUTTON VIEW -->
   <div class="mobile-view">
-    <div class="mobile-content">
-      <h1>Ryan Hussey DJ</h1>
-      <p>Tap below to view the press pack</p>
-      <a class="button" href="press-pack.pdf" target="_blank">
-        Open Press Pack
-      </a>
-    </div>
+    <h1>Ryan Hussey DJ</h1>
+    <p>Tap below to view the press pack</p>
+    <a class="btn" href="press-pack.pdf" target="_blank">Open Press Pack</a>
   </div>
 
 </body>
