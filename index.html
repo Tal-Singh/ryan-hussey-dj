@@ -15,41 +15,44 @@
       height: 100%;
     }
 
-    /* DESKTOP VIEW */
+    body {
+      overflow: hidden;
+    }
+
     .desktop-view {
       display: block;
       width: 100%;
       height: 100vh;
     }
 
-    iframe {
-      display: block;
-      border: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    /* MOBILE VIEW */
     .mobile-view {
-      display: none;
-      height: 100vh;
+      display: none !important;
+      min-height: 100vh;
       box-sizing: border-box;
       padding: 24px;
       text-align: center;
-      align-content: center;
+      background: #000;
+      color: #fff;
+      align-items: center;
       justify-content: center;
-      display: flex;
       flex-direction: column;
+    }
+
+    iframe {
+      display: block;
+      width: 100%;
+      height: 100vh;
+      border: 0;
     }
 
     h1 {
       font-size: 28px;
-      margin-bottom: 12px;
+      margin: 0 0 12px;
     }
 
     p {
-      margin-bottom: 20px;
-      opacity: 0.8;
+      margin: 0 0 20px;
+      opacity: 0.85;
     }
 
     .btn {
@@ -62,8 +65,11 @@
       font-weight: bold;
     }
 
-    /* MOBILE BREAKPOINT */
     @media (max-width: 768px) {
+      body {
+        overflow: auto;
+      }
+
       .desktop-view {
         display: none !important;
       }
@@ -74,19 +80,16 @@
     }
   </style>
 </head>
-
 <body>
 
-  <!-- DESKTOP PDF VIEW -->
   <div class="desktop-view">
     <iframe src="press-pack.pdf"></iframe>
   </div>
 
-  <!-- MOBILE BUTTON VIEW -->
   <div class="mobile-view">
     <h1>Ryan Hussey DJ</h1>
     <p>Tap below to view the press pack</p>
-    <a class="btn" href="press-pack.pdf" target="_blank">Open Press Pack</a>
+    <a class="btn" href="press-pack.pdf" target="_blank" rel="noopener">Open Press Pack</a>
   </div>
 
 </body>
